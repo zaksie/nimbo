@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3883F83F-79ED-4390-B5B3-9560C575A9FD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Base</RootNamespace>
+    <AssemblyName>Base</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>
+    </StartupObject>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DelaySign>false</DelaySign>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\References\SandBox Modules\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\References\Nimbo\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release Omega|AnyCPU' ">
+    <OutputPath>bin\Release Omega\</OutputPath>
+    <DefineConstants>TRACE;OMEGA</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release Omega|x86' ">
+    <OutputPath>bin\x86\Release Omega\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Minimalistic|AnyCPU' ">
+    <OutputPath>bin\Minimalistic\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Minimalistic|x86' ">
+    <OutputPath>bin\x86\Minimalistic\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Devices\Components\GenericVersion.cs" />
+    <Compile Include="Devices\Components\GenericBattery.cs" />
+    <Compile Include="Devices\Components\GenericComponent.cs" />
+    <Compile Include="Devices\Management\IDeviceManager.cs" />
+    <Compile Include="Devices\Features\AvailableFunctionList.cs" />
+    <Compile Include="Devices\Management\GenericDeviceEventArgs.cs" />
+    <Compile Include="Devices\Components\SetupFile.cs" />
+    <Compile Include="Devices\Components\GenericMemorySize.cs" />
+    <Compile Include="Devices\Management\STRUCTURE.cs" />
+    <Compile Include="Devices\Management\SuperDeviceManager API.cs" />
+    <Compile Include="Devices\Management\TemporaryDeviceList.cs" />
+    <Compile Include="Devices\Features\DeviceFeature.cs" />
+    <Compile Include="OpCodes\Helpers\IConfiguration.cs" />
+    <Compile Include="Misc\BasicContact.cs" />
+    <Compile Include="Devices\Management\IDeviceManagerMetadata.cs" />
+    <Compile Include="Modules\ModuleManager.cs" />
+    <Compile Include="OpCodes\Reports\IncomingReport.cs" />
+    <Compile Include="OpCodes\Reports\OutgoingReport.cs" />
+    <Compile Include="OpCodes\Reports\Report.cs" />
+    <Compile Include="OpCodes\Helpers\Alarm.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="OpCodes\Helpers\ProgressReporter.cs" />
+    <Compile Include="OpCodes\Helpers\ResultException.cs" />
+    <Compile Include="OpCodes\Management\OpCodeAsyncResult.cs" />
+    <Compile Include="OpCodes\Management\OpCode.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="OpCodes\Management\OpCodeDelegates.cs" />
+    <Compile Include="OpCodes\Management\OpCodeInvokerArgs.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="OpCodes\Management\OpCodeWrapper.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="OpCodes\Management\OpCodeRequestTimer.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="OpCodes\Helpers\SpareBytes.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="OpCodes\Helpers\Time.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="OpCodes\Helpers\Result.cs" />
+    <Compile Include="Sensors\Samples\SampleList.cs" />
+    <Compile Include="Sensors\Types\ISensor.cs" />
+    <Compile Include="Sensors\Types\PredefinedSensor.cs" />
+    <Compile Include="Sensors\Types\TwoPointUserDefinedSensor.cs" />
+    <Compile Include="Sensors\Types\Temperature\ExternalNTC.cs" />
+    <Compile Include="Sensors\Types\Temperature\GenericTemperatureSensor.cs" />
+    <Compile Include="Devices\Management\DeviceList.cs" />
+    <Compile Include="Devices\Management\ISearchableDeviceList.cs" />
+    <Compile Include="Sensors\Alarms\SensorAlarm.cs" />
+    <Compile Include="Sensors\Alarms\SensorAlarmManager.cs" />
+    <Compile Include="Sensors\Alarms\SensorAlarmStatusArgs.cs" />
+    <Compile Include="Sensors\Alarms\SensorAlarmWarning.cs" />
+    <Compile Include="Devices\Components\GenericStatus.cs" />
+    <Compile Include="Sensors\Types\Current4_20mA.cs" />
+    <Compile Include="Sensors\Types\Temperature\DewPoint.cs" />
+    <Compile Include="Sensors\Types\Temperature\DigitalTemperature.cs" />
+    <Compile Include="Sensors\Types\Temperature\InternalNTC.cs" />
+    <Compile Include="Sensors\Types\Humidity.cs" />
+    <Compile Include="Sensors\Types\Voltage0_10V.cs" />
+    <Compile Include="Sensors\Types\GenericSensor.cs" />
+    <Compile Include="Sensors\Calibrations\CalibrationCoefficient.cs" />
+    <Compile Include="Sensors\Calibrations\CalibrationInformation.cs" />
+    <Compile Include="Sensors\Calibrations\GenericNTC.cs" />
+    <Compile Include="Sensors\Calibrations\ThreePoint.cs" />
+    <Compile Include="Sensors\Calibrations\TwoPoint.cs" />
+    <Compile Include="Sensors\Management\SampleAddedEventArgs.cs" />
+    <Compile Include="Sensors\Management\SensorTypeEnums.cs" />
+    <Compile Include="Sensors\Management\ISensorManager.cs" />
+    <Compile Include="Sensors\Units\Current.cs" />
+    <Compile Include="Sensors\Units\Custom.cs" />
+    <Compile Include="Sensors\Units\Fahrenheit.cs" />
+    <Compile Include="Sensors\Units\IUnit.cs" />
+    <Compile Include="Sensors\Samples\Sample.cs" />
+    <Compile Include="Sensors\Samples\TemperatureAndHumidity.cs" />
+    <Compile Include="Sensors\Management\SensorManager.cs" />
+    <Compile Include="Sensors\Units\Celcius.cs" />
+    <Compile Include="Sensors\Units\Humidity.cs" />
+    <Compile Include="Sensors\Units\Voltage.cs" />
+    <Compile Include="Devices\Features\AvailableFunction.cs" />
+    <Compile Include="Devices\Management\SuperDeviceManager.cs" />
+    <Compile Include="Devices\Types\GenericDevice.cs" />
+    <Compile Include="Devices\Management\GenericDeviceManager.cs" />
+    <Compile Include="Devices\Types\GenericLogger.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AuxiliaryLibrary\Auxiliary.csproj">
+      <Project>{B43268A9-6DF4-4443-91E4-C82F4C9D2299}</Project>
+      <Name>Auxiliary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Communication\Communication.csproj">
+      <Project>{57d453dc-f4b7-42ff-9c30-71bc0e3b52f8}</Project>
+      <Name>Communication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Log\Maintenance.csproj">
+      <Project>{9d41ee91-c38d-460c-bb6d-7cc9a20ba033}</Project>
+      <Name>Maintenance</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

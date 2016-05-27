@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{61DDA415-B8BB-4745-A254-EF99B1D06EE8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MicroXBase</RootNamespace>
+    <AssemblyName>MicroXBase</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\References\Nimbo\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Devices\Components\MicroXBattery.cs" />
+    <Compile Include="Devices\Components\MicroXStatus.cs" />
+    <Compile Include="Devices\Features\DeviceFunctionEnum.cs" />
+    <Compile Include="Devices\Features\MicroXAvailableFunction.cs" />
+    <Compile Include="Devices\Features\MicroXFeature.cs" />
+    <Compile Include="Devices\Management\MicroXDeviceManager.cs" />
+    <Compile Include="Devices\Types\MicroXDevice.cs" />
+    <Compile Include="Modules\GenericDeviceInterfacer.cs" />
+    <Compile Include="Modules\GenericSubDeviceInterfacer.cs" />
+    <Compile Include="Modules\IDeviceInterfacer.cs" />
+    <Compile Include="Modules\IDeviceInterfacerMetadata.cs" />
+    <Compile Include="Modules\ISubDeviceInterfacer.cs" />
+    <Compile Include="Modules\ModuleManager.cs" />
+    <Compile Include="OpCodes\Common\BaseDataPacket.cs" />
+    <Compile Include="OpCodes\Common\Boomerang.cs" />
+    <Compile Include="OpCodes\Common\DataPacket.cs" />
+    <Compile Include="OpCodes\Common\DefaultCalibration.cs" />
+    <Compile Include="OpCodes\Common\Download.cs" />
+    <Compile Include="OpCodes\Common\FirmwareUpload.cs" />
+    <Compile Include="OpCodes\Common\FirmwareUploadDone.cs" />
+    <Compile Include="OpCodes\Common\GetBoomerang.cs" />
+    <Compile Include="OpCodes\Common\SetBoomerang.cs" />
+    <Compile Include="OpCodes\Common\SetDefinedSensor.cs" />
+    <Compile Include="OpCodes\Common\SetSN.cs" />
+    <Compile Include="OpCodes\Common\Setup.cs" />
+    <Compile Include="OpCodes\Common\Status.cs" />
+    <Compile Include="OpCodes\Common\TimerRun.cs" />
+    <Compile Include="OpCodes\DataStructures\CalibrationConfiguration.cs" />
+    <Compile Include="OpCodes\DataStructures\IMicroXConfiguration.cs" />
+    <Compile Include="OpCodes\DataStructures\IMicroXStatusConfiguration.cs" />
+    <Compile Include="OpCodes\Helpers\Time.cs" />
+    <Compile Include="OpCodes\Management\MicroXHeaderNoParse.cs" />
+    <Compile Include="OpCodes\Management\MicroXOpCode.cs" />
+    <Compile Include="OpCodes\Management\MicroXOpCodeWrapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sensors\Generic\DewPoint.cs" />
+    <Compile Include="Sensors\Generic\GenericNTC_V1.cs" />
+    <Compile Include="Sensors\Generic\Humidity.cs" />
+    <Compile Include="Sensors\Management\Converter.cs" />
+    <Compile Include="Sensors\Management\SensorManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AuxiliaryLibrary\Auxiliary.csproj">
+      <Project>{b43268a9-6df4-4443-91e4-c82f4c9d2299}</Project>
+      <Name>Auxiliary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Base\Base.csproj">
+      <Project>{3883f83f-79ed-4390-b5b3-9560c575a9fd}</Project>
+      <Name>Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Log\Maintenance.csproj">
+      <Project>{9d41ee91-c38d-460c-bb6d-7cc9a20ba033}</Project>
+      <Name>Maintenance</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UsbLibrary\UsbLibrary.csproj">
+      <Project>{71e42a6d-c432-4c03-bf4f-abfd2a3173e0}</Project>
+      <Name>UsbLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
